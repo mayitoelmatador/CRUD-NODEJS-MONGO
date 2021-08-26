@@ -1,0 +1,93 @@
+
+<%- include ('partials/header') %>
+
+    <div class="container">
+        <div class="row">
+            <!--FORM-->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="marcaCamara" placeholder="Inserta Marca de Camara"class="form-control">
+                            </div>
+                        </br>
+                            <div class="form-group">
+                                <input type="text" name="modeloCamara" placeholder="Inserta Modelo de Camara"class="form-control">
+                            </div>
+                        </br>
+                            <div class="form-group">
+                                <input type="text" name="marcaPelicula" placeholder="Inserta Marca de Pelicula"class="form-control">
+                            </div>
+                        </br>
+                            <div class="form-group">
+                                <input type="text" name="nombrePelicula" placeholder="Inserta Nombre de Pelicula"class="form-control">
+                            </div>
+                        </br>
+                            <div class="form-group">
+                                <input type="text" name="sesibilidadIsoPelicula" placeholder="Inserta Sensibilidad ISO de Pelicula"class="form-control">
+                            </div>
+                        </br>
+                            <div class="form-group">
+                                <input type="text" name="formatoPelicula" placeholder="Inserta Formato de Pelicula"class="form-control">
+                            </div>
+                        </br>
+                            <div class="form-group">
+                                <input type="text" name="direccionServicio" placeholder="Inserta Direccion de Servicio"class="form-control">
+                            </div>
+                        </br>
+                            <div class="form-group">
+                                <input type="text" name="pegatinaReferencia" placeholder="Inserta Pegatina de Referencia"class="form-control">
+                            </div>
+                        </br>
+                            <button type="submit" class="btn btn-primary">
+                                Agregar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--TABLE-->
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Operacion</th>
+                            <th>MarcaC</th>
+                            <th>modeloC</th>
+                            <th>marcaP</th>
+                            <th>nombreP</th>
+                            <th>IsoP</th>
+                            <th>formato</th>
+                            <th>direccionS</th>
+                            <th>pegatinaR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i<tasks.length;i++){ %>
+                            <tr>
+                                <td><%= i + 1 %></td>
+                                <td>
+                                    <a href="/delete/<%= tasks[i]._id %>"class="btn btn-danger">Eliminar</a>
+                                    <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">Editar</a>
+                                    <br/>
+                                    <a href="/flash/<%= tasks[i]._id %>"class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">Activar||Desactivar FLASH</a>
+                                </td>
+                                <td><%= tasks[i].marcaCamara %></td>
+                                <td><%= tasks[i].modeloCamara %></td>
+                                <td><%= tasks[i].marcaPelicula %></td>
+                                <td><%= tasks[i].nombrePelicula %></td>
+                                <td><%= tasks[i].sesibilidadIsoPelicula %></td>
+                                <td><%= tasks[i].formatoPelicula %></td>
+                                <td><%= tasks[i].direccionServicio %></td>
+                                <td><%= tasks[i].pegatinaReferencia %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<%- include ('partials/footer') %>

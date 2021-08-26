@@ -1,0 +1,50 @@
+<%- include ('partials/header') %>
+<!--FORM-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/edit/<%= task._id%>" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="marcaCamara" placeholder="Inserta Marca de Camara"class="form-control" value="<%= task.marcaCamara%>">
+                        </div>
+                    </br>
+                        <div class="form-group">
+                            <input type="text" name="modeloCamara" placeholder="Inserta Modelo de Camara"class="form-control" value="<%= task.modeloCamara%>">
+                        </div>
+                    </br>
+                        <div class="form-group">
+                            <input type="text" name="marcaPelicula" placeholder="Inserta Marca de Pelicula"class="form-control" value="<%= task.marcaPelicula%>">
+                        </div>
+                    </br>
+                        <div class="form-group">
+                            <input type="text" name="nombrePelicula" placeholder="Inserta Nombre de Pelicula"class="form-control" value="<%= task.nombrePelicula%>">
+                        </div>
+                    </br>
+                        <div class="form-group">
+                            <input type="text" name="sesibilidadIsoPelicula" placeholder="Inserta Sensibilidad ISO de Pelicula"class="form-control" value="<%= task.sesibilidadIsoPelicula%>">
+                        </div>
+                    </br>
+                        <div class="form-group">
+                            <input type="text" name="formatoPelicula" placeholder="Inserta Formato de Pelicula"class="form-control" value="<%= task.formatoPelicula%>">
+                        </div>
+                    </br>
+                        <div class="form-group">
+                            <input type="text" name="direccionServicio" placeholder="Inserta Direccion de Servicio"class="form-control" value="<%= task.direccionServicio%>">
+                        </div>
+                    </br>
+                        <div class="form-group">
+                            <input type="text" name="pegatinaReferencia" placeholder="Inserta Pegatina de Referencia"class="form-control"value="<%= task.pegatinaReferencia%>">
+                        </div>
+                    </br>
+                        <button type="submit" class="btn btn-primary">
+                            Editar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer') %>
